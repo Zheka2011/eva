@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f96da1ce-deb9-4366-84de-e731cad34401" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="ProjectId" id="1Z9UGYcdsyz2uFNxukgvnfMWBBS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f96da1ce-deb9-4366-84de-e731cad34401" name="Default Changelist" comment="" />
+      <created>1584250708841</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584250708841</updated>
+      <workItem from="1584250716647" duration="147000" />
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1300" height="168" key="GridCell.Tab.0.bottom" timestamp="1584251187010">
+      <screen x="1920" y="220" width="1366" height="768" />
+    </state>
+    <state width="1300" height="168" key="GridCell.Tab.0.bottom/1920.220.1366.768/70.247.1850.833@1920.220.1366.768" timestamp="1584251187010" />
+    <state width="1300" height="168" key="GridCell.Tab.0.center" timestamp="1584251187010">
+      <screen x="1920" y="220" width="1366" height="768" />
+    </state>
+    <state width="1300" height="168" key="GridCell.Tab.0.center/1920.220.1366.768/70.247.1850.833@1920.220.1366.768" timestamp="1584251187010" />
+    <state width="1300" height="168" key="GridCell.Tab.0.left" timestamp="1584251187010">
+      <screen x="1920" y="220" width="1366" height="768" />
+    </state>
+    <state width="1300" height="168" key="GridCell.Tab.0.left/1920.220.1366.768/70.247.1850.833@1920.220.1366.768" timestamp="1584251187010" />
+    <state width="1300" height="168" key="GridCell.Tab.0.right" timestamp="1584251187010">
+      <screen x="1920" y="220" width="1366" height="768" />
+    </state>
+    <state width="1300" height="168" key="GridCell.Tab.0.right/1920.220.1366.768/70.247.1850.833@1920.220.1366.768" timestamp="1584251187010" />
+    <state x="2092" y="247" width="1022" height="737" key="SettingsEditor" timestamp="1584251181650">
+      <screen x="1920" y="220" width="1366" height="768" />
+    </state>
+    <state x="2092" y="247" width="1022" height="737" key="SettingsEditor/1920.220.1366.768/70.247.1850.833@1920.220.1366.768" timestamp="1584251181650" />
+    <state x="2259" y="438" key="com.intellij.ide.util.TipDialog" timestamp="1584250718606">
+      <screen x="1920" y="220" width="1366" height="768" />
+    </state>
+    <state x="2259" y="438" key="com.intellij.ide.util.TipDialog/1920.220.1366.768/70.247.1850.833@1920.220.1366.768" timestamp="1584250718606" />
+  </component>
+</project>

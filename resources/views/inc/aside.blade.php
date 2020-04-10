@@ -4,7 +4,7 @@
     <div class="sidebar-sticky">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link active" href="{{ route('home')}}"><i class="fas fa-chart-line"></i> Dashboard <span class="sr-only">(current)</span></a>
+          <a class="nav-link active" href="{{ route('dash')}}"><i class="fas fa-chart-line"></i> Dashboard <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('sellings')}}"><i class="fas fa-dollar-sign"></i> Продажи</a>

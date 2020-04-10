@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->middleware('auth')->name('home');
+Route::get('/', 'HomeController@index')->middleware('auth')->name('dash');
 
 Route::get('/materials', 'StorageController@index')->middleware('auth')->name('storage');
 Route::post('/materials/submit', 'StorageController@mat_add')->middleware('auth')->name('stored');
@@ -25,7 +25,7 @@ Route::group(['middleware' => 'role:superadmin'], function () {
 	Route::get('/users', 'UserController@index')->middleware('auth')->name('users');
 });
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+// Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 // Route::group(['middleware' => 'role:admin'], function () {
 // 	Route::get('/storage', 'StorageController@index');

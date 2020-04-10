@@ -45,7 +45,9 @@ class StorageController extends Controller {
 
 		$t_material->save();
 
-		return redirect()->route('materials')->with('success', 'Новый материал добавлен');
+		OrdersController::order_cost();
+
+		return redirect()->route('storage')->with('success', 'Новый материал добавлен');
 
 	}
 

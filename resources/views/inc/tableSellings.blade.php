@@ -7,6 +7,7 @@
         <th>Модель</th>
         <th>Телефон</th>
         <th>Стоимость</th>
+        <th>Скидка</th>
         <th>Себестоимость</th>
         <th>Типа прибыль</th>
         <th>Дата продажи</th>
@@ -23,8 +24,9 @@
           <td>{{ $selling->model }}</td>
           <td>{{ $selling->contact }}</td>
           <td>{{ $selling->price }}</td>
+          <td>{{ $selling->sale }}</td>
           <td>{{ $selling->sum_ss }}</td>
-          <td>{{ $selling->price - $selling->sum_ss }}</td>
+          <td>{{ $selling->price - $selling->sum_ss - $selling->sale }}</td>
           <td>{{ $selling->date_of_sell }}</td>
           <td>{{ $selling->userSel->name }}</td>
 		  <td>{{ $selling->salary}}</td>
@@ -50,6 +52,9 @@
     </label>
     <label for="price">
       <input type="number" name="price" value="" id="price" placeholder="Введите стоимость заказа" class="form-control" v-on:input="sallary = $event.target.value">
+    </label>
+    <label for="sale">
+      <input type="number" name="sale" value="" id="sale" placeholder="Скидка" class="form-control">
     </label>
     <label for="date_of_sell">
       <input type="date" name="date_of_sell" value="" id="date_of_sell" class="form-control">

@@ -18,7 +18,7 @@
         <tr>
           <td>{{ $order->id }}</td>
           <td>{{ $order->provisioner }}</td>
-          <td>{{ $order->date_of_receiving }}</td>
+          <td>{{ \Carbon\Carbon::parse($order->date_of_receiving)->format('j F Y г.') }}</td>
           <td>{{ $order->order_cost }}</td>
           <td>{{ $order->shipper}}</td>
           <td>{{ $order->cost_of_delivery}}</td>

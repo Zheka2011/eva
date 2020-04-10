@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
+@section('title', 'EVA kit')
+
 @section('content')
-	<h1>Тут будут касивые графики</h1>
 
-
+	@include('inc.dashMain')
 @endsection

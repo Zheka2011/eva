@@ -33,7 +33,6 @@ class SellingsController extends Controller {
 			}
 			$users[$id]->active = $active;
 		}
-		// dd($users);
 
 		return view('sellings', [
 			'sellings' => $sellings,
@@ -70,6 +69,7 @@ class SellingsController extends Controller {
 		$selling->model = $req->input('model');
 		$selling->contact = $req->input('contact');
 		$selling->price = $req->input('price');
+		$selling->sale = $req->input('sale');
 		$selling->date_of_sell = $req->input('date_of_sell');
 		$selling->user_id = $req->input('user_id');
 		$selling->salary = $req->input('salary');

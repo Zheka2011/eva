@@ -12,18 +12,7 @@ class OrdersController extends Controller {
 
 		$orders = Orders::paginate(10);
 
-		foreach ($orders as $id => $order) {
-			$order_cost = 0;
-			$order_cost = Orders::find($order->id)->materialsOnOrder->sum(function ($t) {
-				return $t->amt * $t->unit_cost;
-			});
-
-			if ($orders[$id]->order_cost !== $order_cost) {
-				$orders[$id]->order_cost = $order_cost;
-				$orders[$id]->save();
-			}
-
-		}
+		OrdersController::order_cost();
 
 		return view('orders', ['orders' => $orders]);
 	}
@@ -47,5 +36,23 @@ class OrdersController extends Controller {
 		$order->save();
 
 		return redirect()->route('orders')->with('success', 'Новая поставка добавлена');
+	}
+
+	public static function order_cost() {
+
+		$orders = Orders::all();
+
+		foreach ($orders as $id => $order) {
+
+			$order_cost = Orders::find($order->id)->materialsOnOrder->sum(function ($t) {
+				return $t->amt * $t->unit_cost;
+			});
+
+			if ($orders[$id]->order_cost !== $order_cost) {
+				$orders[$id]->order_cost = $order_cost;
+				$orders[$id]->save();
+			}
+
+		}
 	}
 }

@@ -12,3 +12,4 @@ yarn-error.log
 deploy.php
 /.rocketeer
 /.idea
+.gitignore

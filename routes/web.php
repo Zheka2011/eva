@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->middleware('auth');
+Route::get('/', 'HomeController@index')->middleware('auth')->name('home');
 
 Route::get('/materials', 'StorageController@index')->middleware('auth')->name('storage');
 Route::post('/materials/submit', 'StorageController@mat_add')->middleware('auth')->name('stored');
@@ -18,8 +18,11 @@ Route::get('/sellings/{id}', 'SellingsController@selMQ')->middleware('auth')->na
 Route::post('/sellAdd', 'SellingsController@selAdd')->middleware('auth')->name('selAdd');
 Route::post('/sellAddMQ/{id}', 'SellingsController@selAddMQ')->middleware('auth')->name('selAddMQ');
 
+Route::get('/exps', 'ExpsController@index')->middleware('auth')->name('exps');
+Route::post('/addExps', 'ExpsController@addExps')->middleware('auth')->name('addExps');
+
 Route::group(['middleware' => 'role:superadmin'], function () {
-	Route::get('/users', 'UserController@index')->middleware('auth');
+	Route::get('/users', 'UserController@index')->middleware('auth')->name('users');
 });
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');

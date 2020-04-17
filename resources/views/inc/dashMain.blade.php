@@ -1,15 +1,29 @@
 <div>
-	<p>Доходы за месяц - {{ $income }}</p>
+	<p @if($k < 0)
+		style="color: red"
+	@endif>В кассе - {{ $k }}</p>
 </div>
 
 <div>
-	<p>Расходы за месяц - {{ $exes }}</p>
+	<p @if($income < 0)
+		style="color: red"
+	@endif>Доходы за месяц - {{ $income }}</p>
 </div>
 
 <div>
-	<p>Прибыль за месяц - {{ $profit }}</p>
+	<p @if($exes < 0)
+		style="color: red"
+	@endif>Расходы за месяц - {{ $exes }}</p>
 </div>
 
 <div>
-	<p>ЗП за месяц - {{ $salary }}</p>
+	<p @if($profit < 0)
+		style="color: red"
+	@endif>Прибыль за месяц - {{ $profit }}</p>
+</div>
+
+<div>
+	<p @if($salary < 0)
+		style="color: red"
+	@endif>ЗП за месяц - {{ $salary }}</p>
 </div>

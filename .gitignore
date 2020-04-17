@@ -13,3 +13,4 @@ deploy.php
 /.rocketeer
 /.idea
 .gitignore
+/node_modeles

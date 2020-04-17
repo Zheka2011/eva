@@ -23,7 +23,6 @@ class ExpsController extends Controller {
 	public function addExps(Request $req) {
 
 		$valid = $req->validate([
-			'name' => 'required',
 			'contractor' => 'required',
 			'cost' => 'required',
 			'date_start' => 'required',
@@ -31,7 +30,6 @@ class ExpsController extends Controller {
 		]);
 
 		$exps = new Exps();
-		$exps->name = $req->input('name');
 		$exps->contractor = $req->input('contractor');
 		$exps->cost = $req->input('cost');
 		$exps->date_start = $req->input('date_start');

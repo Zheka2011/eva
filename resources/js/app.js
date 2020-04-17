@@ -34,27 +34,4 @@ const app = new Vue({
     }
 });
 
-// const dot = new Vue({
-//     el: '#quantum',
-//     data: {
-//     	input: 0
-//     },
-//     methods:{
-//     	rep2dot(){
-//     		this.input = cc
-//     	}
-//     }
-// });
-
-var vm = new Vue({
-  el: '#quantum',
-  data: {
-    message: 'Привет'
-  },
-  methods:{
-    fun1(e) {
-      e.value = e.value.replace(/[,]/g, ".");
-    },
-  }
-})
 

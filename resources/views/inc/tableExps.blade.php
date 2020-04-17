@@ -5,7 +5,6 @@
     <thead>
       <tr>
         <th>#</th>
-        <th>Наименование</th>
         <th>Контрагент</th>
         <th>Сумма</th>
         <th>Дата начала</th>
@@ -19,7 +18,6 @@
       @foreach ($exps as $exp)
         <tr>
           <td>{{ $exp->id }}</td>
-          <td>{{ $exp->name }}</td>
           <td>{{ $exp->contractor }}</td>
           <td>{{ $exp->cost }}</td>
           <td>{{ $exp->date_start }}</td>
@@ -37,9 +35,6 @@
 <form action="{{ route('addExps') }}" method="post">
   @csrf
   <div class="form-group">
-    <label for="name">
-      <input type="text" name="name" value="" id="name" placeholder="Название" class="form-control">
-    </label>
     <label for="contractor">
       <input type="text" name="contractor" value="" id="contractor" placeholder="Контрагент" class="form-control">
     </label>

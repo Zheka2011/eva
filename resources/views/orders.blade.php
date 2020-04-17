@@ -5,4 +5,5 @@
 @section('content')
 
 	@include('inc.tableOrders')
+
 @endsection

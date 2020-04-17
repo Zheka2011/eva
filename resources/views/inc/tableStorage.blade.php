@@ -23,7 +23,11 @@
           <td>{{ $material->name }}</td>
           <td>{{ $material->color }}</td>
           <td>{{ $material->amt }}</td>
-          <td>{{ $material->total_volume }} {{ $material->unit }}</td>
+          <td @if($material->total_volume/$material->volume < 2)
+            class="alert alert-danger"
+            @elseif($material->total_volume/$material->volume < 5)
+            class="alert alert-warning"
+          @endif>{{ $material->total_volume }} {{ $material->unit }}</td>
           <td>{{ $material->unit_cost }}</td>
           <td>{{ $material->cost_price }}</td>
           <td>{{ $material->orderOnMaterials->provisioner }}, {{ $material->orderOnMaterials->date_of_receiving }}</td>
@@ -40,7 +44,8 @@
     </tbody>
 
   </table>
-  {{ $materials->links() }}
+  {{ $materials->onEachSide(5)->links() }}
+
 </div>
 
 <form action="{{ route('stored') }}" method="post">

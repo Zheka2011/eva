@@ -10,7 +10,7 @@ class OrdersController extends Controller {
 
 	public function index() {
 
-		$orders = Orders::paginate(10);
+		$orders = Orders::paginate(20);
 
 		OrdersController::order_cost();
 

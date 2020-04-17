@@ -29,7 +29,7 @@
           <td>{{ $selling->price - $selling->sum_ss - $selling->sale }}</td>
           <td>{{ $selling->date_of_sell }}</td>
           <td>{{ $selling->userSel->name }}</td>
-		  <td>{{ $selling->salary}}</td>
+		      <td>{{ $selling->salary}}</td>
           <td>{{ $selling->comment}}</td>
           <td><a href="{{ route('selMQ', ['id' => $selling->id])}}"><i class="fas fa-edit"></i></a></td>
         </tr>
@@ -39,6 +39,7 @@
 
   </table>
   {{ $sellings->links() }}
+
 </div>
 
 <form action="{{ route('selAdd') }}" method="post">

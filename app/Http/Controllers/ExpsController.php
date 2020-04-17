@@ -10,7 +10,7 @@ class ExpsController extends Controller {
 
 	public function index() {
 
-		$exps = Exps::paginate(15);
+		$exps = Exps::paginate(20);
 
 		$categorys = CategoryExps::all();
 

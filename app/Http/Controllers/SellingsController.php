@@ -16,7 +16,7 @@ class SellingsController extends Controller {
 
 		StorageController::saveTV_CP();
 
-		$sellings = Selling::where('del', '=', 0)->orderby('date_of_sell', 'desc')->paginate(15);
+		$sellings = Selling::where('del', '=', 0)->orderby('date_of_sell', 'desc')->paginate(20);
 
 		foreach ($sellings as $id => $selling) {
 

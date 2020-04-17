@@ -14,7 +14,7 @@ class StorageController extends Controller {
 
 		StorageController::saveTV_CP();
 
-		$materials = Materials::where('del', '=', 0)->orderby('id', 'desc')->paginate(10);
+		$materials = Materials::where('del', '=', 0)->where('total_volume', '>', 0)->orderby('id', 'desc')->paginate(20);
 
 		return view('storage',
 			['materials' => $materials,

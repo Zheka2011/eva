@@ -27,3 +27,9 @@
 		style="color: red"
 	@endif>ЗП за месяц - {{ $salary }}</p>
 </div>
+
+<div>
+	<p @if($exes/date("t") > $income/date("t"))
+		style="color: red"
+	@endif>Точка безубыточности (в день) - {{ ceil($exes/date("t")) }}р/{{ round($income/date("t")) }}р</p>
+</div>

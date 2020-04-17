@@ -21,7 +21,6 @@ class HomeController extends Controller {
 
 		$r = Exps::where('del', '=', 0)->sum('cost');
 		$k = $d - $r;
-		// dd($k);
 
 		//за месяц
 

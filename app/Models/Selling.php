@@ -5,6 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class Selling extends Model {
+	protected $casts = [
+		'date_of_sell' => 'date',
+	];
 
 	public function userSel() {
 		return $this->belongsTo('App\User', 'user_id');

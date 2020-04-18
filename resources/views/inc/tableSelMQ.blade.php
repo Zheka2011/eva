@@ -1,4 +1,4 @@
-<h3 class="mt-5">{{ $selMQ->model }}, {{ $selMQ->date_of_sell }}</h3>
+<h3 class="mt-5">{{ $selMQ->model }}, {{ ruDate($selMQ->date_of_sell) }}</h3>
 <div class="table-responsive ">
   <table class="table table-striped table-sm">
     <thead>
@@ -25,7 +25,7 @@
   </table>
   {{-- {{ $sellings->links() }} --}}
 </div>
-
+<hr>
 <form action="{{ route('selAddMQ',['id'=>$selMQ->id]) }}" method="post">
   @csrf
   <div class="form-group">
@@ -39,7 +39,7 @@
       </select>
     </label>
     <label for="quantum">
-      <input type="number" name="quantum" value="" id="quantum" placeholder="Введите количество" class="form-control" step="any">
+      <input type="number" name="quantum" value="" id="quantum" placeholder="Количество" class="form-control" step="any">
     </label>
     {{-- <label for="cost_quantum">
       <input type="text" name="cost_quantum" value="" id="cost_quantum" disabled placeholder="Рассчитается автоматически" class="form-control">

@@ -30,13 +30,13 @@
           @endif>{{ $material->total_volume }} {{ $material->unit }}</td>
           <td>{{ $material->unit_cost }}</td>
           <td>{{ $material->cost_price }}</td>
-          <td>{{ $material->orderOnMaterials->provisioner }}, {{ $material->orderOnMaterials->date_of_receiving }}</td>
+          <td>{{ $material->orderOnMaterials->provisioner }}, {{ $material->orderOnMaterials->date_of_receiving->format('d.m.y') }}</td>
           <td>
-            <form action="{{ route('mat_del') }}" method="post">
+           {{--  <form action="{{ route('mat_del') }}" method="post">
               @csrf
               <input type="hidden" name="id_del" value="{{ $material->id }}" >
               <button type="submit" class="btn btn-danger btn-sm">Удалить</button>
-            </form>
+            </form> --}}
           </td>
         </tr>
       @endforeach
@@ -47,29 +47,48 @@
   {{ $materials->onEachSide(5)->links() }}
 
 </div>
-
+<hr>
 <form action="{{ route('stored') }}" method="post">
   @csrf
-  <div class="form-group">
-    <label for="name">
-      <input type="text" name="name" value="" id="name" placeholder="Введите название" class="form-control">
-    </label>
-    <label for="color">
-      <input type="text" name="color" value="" id="color" placeholder="Введите цвет" class="form-control">
-    </label>
-    <label for="amt">
-      <input type="number" name="amt" value="" id="amt" placeholder="Введите количество, шт" class="form-control">
-    </label>
-    <label for="volume">
-      <input type="number" name="volume" value="" id="volume" placeholder="Введите размерность 1 ед." class="form-control" step="any">
-    </label>
-    <label for="unit">
-      <input type="text" name="unit" value="" id="unit" placeholder="Введите ед. измерения" class="form-control">
-    </label>
-    <label for="unit_cost">
-      <input type="number" name="unit_cost" value="" id="unit_cost" placeholder="Введите стоимость за ед." class="form-control" step="any">
-    </label>
-    <label for="order_id">
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label col-form-label-sm" for="name">Название</label>
+    <div class="col-sm-6">
+      <input type="text" name="name" value="" id="name" placeholder="" class="form-control" required>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label col-form-label-sm" for="color">Цвет</label>
+    <div class="col-sm-6">
+      <input type="text" name="color" value="" id="color" placeholder="" class="form-control" required>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label col-form-label-sm" for="amt">Количество, шт</label>
+    <div class="col-sm-6">
+      <input type="number" name="amt" value="" id="amt" placeholder="" class="form-control" required>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label col-form-label-sm" for="volume">Размерность 1 ед.</label>
+    <div class="col-sm-6">
+      <input type="number" name="volume" value="" id="volume" placeholder="" class="form-control" step="any" required>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label col-form-label-sm" for="unit">Ед. измерения</label>
+    <div class="col-sm-6">
+      <input type="text" name="unit" value="" id="unit" placeholder="" class="form-control" required>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label col-form-label-sm" for="unit_cost">Стоимость за ед.</label>
+    <div class="col-sm-6">
+      <input type="number" name="unit_cost" value="" id="unit_cost" placeholder="" class="form-control" step="any" required>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label col-form-label-sm" for="order_id">Поставка</label>
+    <div class="col-sm-6">
       <select class="form-control custom-select " name="order_id" id="order_id">
         @foreach($orders as $order)
           <option value="{{ $order->id }}">
@@ -77,7 +96,11 @@
           </option>
         @endforeach
       </select>
-    </label>
-    <button type="submit" class="btn btn-success" >Отправить</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-8">
+      <button type="submit" class="btn btn-success" >Отправить</button>
+    </div>
   </div>
 </form>

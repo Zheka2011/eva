@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider {
@@ -19,7 +20,11 @@ class AppServiceProvider extends ServiceProvider {
 	 *
 	 * @return void
 	 */
+
 	public function boot() {
-		//
+
+		setlocale(LC_ALL, 'ru_RU.utf8');
+		Carbon::setLocale('ru');
+
 	}
 }

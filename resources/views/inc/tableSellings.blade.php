@@ -27,7 +27,7 @@
           <td>{{ $selling->sale }}</td>
           <td>{{ $selling->sum_ss }}</td>
           <td>{{ $selling->price - $selling->sum_ss - $selling->sale }}</td>
-          <td>{{ $selling->date_of_sell }}</td>
+          <td>{{ ruDate($selling->date_of_sell) }}</td>
           <td>{{ $selling->userSel->name }}</td>
 		      <td>{{ $selling->salary}}</td>
           <td>{{ $selling->comment}}</td>
@@ -41,43 +41,71 @@
   {{ $sellings->links() }}
 
 </div>
-
+<hr>
 <form action="{{ route('selAdd') }}" method="post">
   @csrf
-  <div class="form-group" id="perSallary">
-    <label for="model">
-      <input type="text" name="model" value="" id="model" placeholder="Введите модель" class="form-control">
-    </label>
-    <label for="contact">
-      <input type="text" name="contact" value="" id="contact" placeholder="Введите номер телефона"  class="form-control">
-    </label>
-    <label for="price">
-      <input type="number" name="price" value="" id="price" placeholder="Введите стоимость заказа" class="form-control" v-on:input="sallary = $event.target.value">
-    </label>
-    <label for="sale">
-      <input type="number" name="sale" value="" id="sale" placeholder="Скидка" class="form-control">
-    </label>
-    <label for="date_of_sell">
-      <input type="date" name="date_of_sell" value="" id="date_of_sell" class="form-control">
-    </label>
-    <label for="user_id">
-      <select class="form-control custom-select " name="user_id" id="user_id">
-        @foreach($users as $user)
-          <option value="{{ $user->id }}"
-            @if ($user->active)
-              selected="true"
-            @endif>
-            {{ $user->name}}
-          </option>
-        @endforeach
-      </select>
-    </label>
-    <label for="salary">
-      <input type="text" name="salary" v-bind:value="sallary * 0.2" id="salary" readonly placeholder="Рассчитается автоматически" class="form-control">
-    </label>
-    <label for="comment">
-      <input type="textarea" name="comment" value="" id="comment" placeholder="Введите комментарий" class="form-control">
-    </label>
-    <button type="submit" class="btn btn-success" >Отправить</button>
+  <div id="perSallary"> {{-- используется???? --}}
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label col-form-label-sm" for="model">Модель</label>
+      <div class="col-sm-6">
+        <input type="text" name="model" value="" id="model" placeholder="" class="form-control" required>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label col-form-label-sm" for="contact">Номер телефона</label>
+      <div class="col-sm-6">
+        <input type="text" name="contact" value="" id="contact" placeholder=""  class="form-control" required>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label col-form-label-sm" for="price">Стоимость заказа</label>
+      <div class="col-sm-6">
+        <input type="number" name="price" value="" id="price" placeholder="" class="form-control" v-on:input="sallary = $event.target.value" required>
+      </div>
+    </div>
+     <div class="form-group row">
+      <label class="col-sm-2 col-form-label col-form-label-sm" for="sale">Скидка</label>
+      <div class="col-sm-6">
+        <input type="number" name="sale" value="" id="sale" placeholder="" class="form-control">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label col-form-label-sm" for="date_of_sell">Дата продажи</label>
+      <div class="col-sm-6">
+        <input type="date" name="date_of_sell" value="" id="date_of_sell" class="form-control" required>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label col-form-label-sm" for="user_id">Мастер</label>
+      <div class="col-sm-6">
+        <select class="form-control custom-select " name="user_id" id="user_id">
+          @foreach($users as $user)
+            <option value="{{ $user->id }}"
+              @if ($user->active)
+                selected="true"
+              @endif>
+              {{ $user->name}}
+            </option>
+          @endforeach
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label col-form-label-sm" for="salary">% мастеру</label>
+      <div class="col-sm-6">
+        <input type="text" name="salary" v-bind:value="sallary * 0.2" id="salary" readonly placeholder="Рассчитается автоматически" class="form-control">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label col-form-label-sm" for="comment">Комментарий</label>
+      <div class="col-sm-6">
+        <input type="textarea" name="comment" value="" id="comment" placeholder="" class="form-control">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-8">
+        <button type="submit" class="btn btn-success" >Отправить</button>
+      </div>
+    </div>
   </div>
 </form>
